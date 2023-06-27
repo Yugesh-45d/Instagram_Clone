@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram/screens/home_page.dart';
-import 'package:instagram/screens/profile_page.dart';
+import 'package:instagram/widgets/nav_bar_widget.dart';
 
 void main() {
   runApp(
@@ -27,9 +27,11 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        // body: Insta_HomePage(),
-        body: Profile_Page(),
+        body: Insta_HomePage(),
+        bottomNavigationBar: NavBar_Widget(),
       ),
     );
   }
 }
+
+//Personal_Post Widget banauna baki xa, photo lai grid ma hale paxi matra yo banaune

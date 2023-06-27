@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram/screens/profile_page.dart';
 
 class InstaPost_model extends StatelessWidget {
   final String profile_pic;
@@ -21,9 +22,19 @@ class InstaPost_model extends StatelessWidget {
     return Column(
       children: [
         ListTile(
-          leading: CircleAvatar(
-            radius: 18,
-            backgroundImage: AssetImage(profile_pic),
+          leading: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: ((context) => Profile_Page()),
+                ),
+              );
+            },
+            child: CircleAvatar(
+              radius: 18,
+              backgroundImage: AssetImage(profile_pic),
+            ),
           ),
           title: Text(
             username,
@@ -50,12 +61,10 @@ class InstaPost_model extends StatelessWidget {
         //------------------------Name and avatar wala row ends-----------------------
         //---------------------------------------------------------------------------
         //------------------------Main Image Begins----------------------------------
-        Image(
-          image: AssetImage(upload_pic),
+        Image.asset(
+          upload_pic,
           height: 320,
-          // width: double.infinity,
         ),
-
         // ----------------------Main Image ends-------------------------------------
         //------------------------------------------------------------------------------
         //------------------------Like,Comment, Share, Bookmark Section Begins------------

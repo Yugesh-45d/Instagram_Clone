@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:instagram/widgets/insta_post_widget.dart';
-import 'package:instagram/widgets/nav_bar_widget.dart';
 import 'package:instagram/widgets/story_widget.dart';
 
 class Insta_HomePage extends StatelessWidget {
@@ -48,7 +47,6 @@ class Insta_HomePage extends StatelessWidget {
           //---------------------Top Instagram and icons row sections ends------------------
           Insta_Story_Widget(),
           InstaPost_widget(),
-          NavBar_Widget(),
           //----------------------------------------------------------------------------
         ],
       ),

@@ -72,7 +72,7 @@ class Insta_Story_Widget extends StatelessWidget {
           ...StoryData.map(
             (e) => Story_Model(
               username: e["username"],
-              photos: e["photos"],
+              photos: e["photo"],
             ),
           ).toList(),
         ],
