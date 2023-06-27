@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram/screens/home_page.dart';
+// import 'package:instagram/screens/home_page.dart';
 import 'package:instagram/screens/profile_page.dart';
 // import 'package:water_drop_nav_bar/water_drop_nav_bar.dart';
 
@@ -9,7 +9,9 @@ class NavBar_Widget extends StatefulWidget {
   @override
   State<NavBar_Widget> createState() => _NavBar_WidgetState();
 }
-
+    // else if (selected_index == 0) {
+    //   Navigator.push(context, MaterialPageRoute(builder: (context) => Insta_HomePage()));
+    // }
 class _NavBar_WidgetState extends State<NavBar_Widget> {
   int selected_index = 0;
   void ItemSelected(int index) {
@@ -17,9 +19,7 @@ class _NavBar_WidgetState extends State<NavBar_Widget> {
     if (selected_index == 4) {
       Navigator.push(context, MaterialPageRoute(builder: (context) => Profile_Page()));
     }
-    // else if (selected_index == 0) {
-    //   Navigator.push(context, MaterialPageRoute(builder: (context) => Insta_HomePage()));
-    // }
+
     // switch (selected_index) {
     //   case 0:
     //     // Navigator.push(context, MaterialPageRoute(builder: (context) => Insta_HomePage()));
