@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:instagram/screens/home_page.dart';
+import 'package:instagram/main.dart';
 import 'package:instagram/screens/profile_page.dart';
 // import 'package:water_drop_nav_bar/water_drop_nav_bar.dart';
 
@@ -9,32 +9,29 @@ class NavBar_Widget extends StatefulWidget {
   @override
   State<NavBar_Widget> createState() => _NavBar_WidgetState();
 }
-    // else if (selected_index == 0) {
-    //   Navigator.push(context, MaterialPageRoute(builder: (context) => Insta_HomePage()));
-    // }
+
 class _NavBar_WidgetState extends State<NavBar_Widget> {
   int selected_index = 0;
   void ItemSelected(int index) {
     selected_index = index;
-    if (selected_index == 4) {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => Profile_Page()));
+    switch (selected_index) {
+      case 0:
+        Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+        break;
+
+      case 1:
+        break;
+
+      case 2:
+        break;
+
+      case 3:
+        break;
+
+      case 4:
+        Navigator.push(context, MaterialPageRoute(builder: (context) => Profile_Page()));
+        break;
     }
-
-    // switch (selected_index) {
-    //   case 0:
-    //     // Navigator.push(context, MaterialPageRoute(builder: (context) => Insta_HomePage()));
-    //     IconButton.filled(onPressed: () {}, icon: Icon(Icons.help));
-    //     break;
-
-    //   case 1:
-    //     break;
-
-    //   case 2:
-    //     break;
-    //   case 3:
-    //     // Navigator.push(context, MaterialPageRoute(builder: (context) => Profile_Page()));
-    //     break;
-    // }
   }
 
   @override
