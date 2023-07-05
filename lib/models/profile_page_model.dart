@@ -163,6 +163,9 @@ class Profile_Page_Model extends StatelessWidget {
                 style: TextButton.styleFrom(
                   fixedSize: Size.fromWidth(136),
                   backgroundColor: Color(0xffebebeb),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
                 ),
                 onPressed: () {},
                 child: Text(
