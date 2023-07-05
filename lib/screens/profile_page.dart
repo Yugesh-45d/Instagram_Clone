@@ -262,7 +262,6 @@ class Profile_Page extends StatelessWidget {
             ],
           ),
         ),
-        bottomNavigationBar: NavBar_Widget(),
       ),
     );
   }

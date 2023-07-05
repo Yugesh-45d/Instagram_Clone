@@ -9,15 +9,17 @@ class NavBar_Widget extends StatefulWidget {
   @override
   State<NavBar_Widget> createState() => _NavBar_WidgetState();
 }
-    // else if (selected_index == 0) {
-    //   Navigator.push(context, MaterialPageRoute(builder: (context) => Insta_HomePage()));
-    // }
+
+// else if (selected_index == 0) {
+//   Navigator.push(context, MaterialPageRoute(builder: (context) => Insta_HomePage()));
+// }
 class _NavBar_WidgetState extends State<NavBar_Widget> {
   int selected_index = 0;
   void ItemSelected(int index) {
     selected_index = index;
     if (selected_index == 4) {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => Profile_Page()));
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => Profile_Page()));
     }
 
     // switch (selected_index) {
