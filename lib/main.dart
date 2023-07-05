@@ -1,38 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:instagram/screens/home_page.dart';
-import 'package:instagram/widgets/nav_bar_widget.dart';
+import 'package:instagram/screens/main_page.dart';
 
 void main() {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Instagram",
-      home: HomePage(),
+      home: MainPage(),
       theme: ThemeData(
         primaryColor: Colors.red.shade400,
       ),
     ),
   );
+<<<<<<< HEAD
 }
-
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
-
-  @override
-  State<HomePage> createState() => _HomePageState();
+=======
 }
-
-class _HomePageState extends State<HomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Insta_HomePage(),
-        bottomNavigationBar: NavBar_Widget(),
-      ),
-    );
-  }
-}
-
-//Personal_Post Widget banauna baki xa, photo lai grid ma hale paxi matra yo banaune
-
+>>>>>>> d6ab9743e0d7c5a1221f3798ea7e9d05ea040c52

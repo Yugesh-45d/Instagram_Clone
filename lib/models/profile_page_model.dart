@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:instagram/widgets/profile_create_widget.dart';
+import 'package:instagram/widgets/profile_hamburger_widget.dart';
+
+import '../widgets/personal_story_widget.dart';
+import '../widgets/profile_account_widget.dart';
 
 class Profile_Page_Model extends StatelessWidget {
   final String profile_pic;
@@ -29,21 +34,58 @@ class Profile_Page_Model extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Icon(Icons.arrow_drop_down),
+                  GestureDetector(
+                    onTap: () {
+                      showModalBottomSheet(
+                        isScrollControlled: true,
+                        context: context,
+                        backgroundColor: Colors.transparent,
+                        builder: (context) {
+                          return AccountModal();
+                        },
+                      );
+                    },
+                    child: Icon(
+                      Icons.arrow_drop_down,
+                    ),
+                  ),
                 ],
               ),
               Row(
                 children: [
-                  Icon(
-                    Icons.add_box_outlined,
-                    size: 32,
+                  GestureDetector(
+                    onTap: () {
+                      
+                      showModalBottomSheet(
+                        isScrollControlled: true,
+                          context: context,
+                          backgroundColor: Colors.transparent,
+                          builder: (context) {
+                            return CreateModal();
+                          });
+                    },
+                    child: Icon(
+                      Icons.add_box_outlined,
+                      size: 32,
+                    ),
                   ),
                   SizedBox(
                     width: 24,
                   ),
-                  Icon(
-                    Icons.menu,
-                    size: 32,
+                  GestureDetector(
+                    onTap: () {
+                      showModalBottomSheet(
+                          isScrollControlled: true,
+                          context: context,
+                          backgroundColor: Colors.transparent,
+                          builder: (context) {
+                            return HamburgerModal();
+                          });
+                    },
+                    child: Icon(
+                      Icons.menu,
+                      size: 32,
+                    ),
                   ),
                 ],
               ),
@@ -146,8 +188,11 @@ class Profile_Page_Model extends StatelessWidget {
             children: [
               TextButton(
                 style: TextButton.styleFrom(
-                  fixedSize: Size.fromWidth(128),
+                  fixedSize: Size.fromWidth(140),
                   backgroundColor: Color(0xffebebeb),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
                 ),
                 onPressed: () {},
                 child: Text(
@@ -161,8 +206,11 @@ class Profile_Page_Model extends StatelessWidget {
               ),
               TextButton(
                 style: TextButton.styleFrom(
-                  fixedSize: Size.fromWidth(136),
+                  fixedSize: Size.fromWidth(140),
                   backgroundColor: Color(0xffebebeb),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
                 ),
                 onPressed: () {},
                 child: Text(
@@ -174,14 +222,48 @@ class Profile_Page_Model extends StatelessWidget {
                   ),
                 ),
               ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.person_add_outlined,
+              GestureDetector(
+                onTap: () {},
+                child: Container(
+                  height: 36,
+                  width: 36,
+                  child: Icon(
+                    Icons.person_add_outlined,
+                    size: 20,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Color(0xffebebeb),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
                 ),
+              )
+            ],
+          ),
+        ),
+        Personal_Story_Widget(),
+        Padding(
+          padding: const EdgeInsets.only(
+            top: 16,
+            left: 16,
+            right: 16,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Icon(
+                Icons.grid_on_sharp,
+                size: 28,
+              ),
+              Icon(
+                Icons.account_box_outlined,
+                size: 32,
+                color: Colors.grey,
               ),
             ],
           ),
+        ),
+        SizedBox(
+          height: 8,
         ),
       ],
     );

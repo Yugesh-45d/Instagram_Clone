@@ -4,7 +4,7 @@ List<Map<String, dynamic>> profilePageData = [
     'username': 'john_snow',
     'name': 'John Snow',
     'bio': 'King in the north',
-    'posts': '5',
+    'posts': '15',
     'followers': '668',
     'following': '50',
   },

@@ -23,14 +23,7 @@ class InstaPost_model extends StatelessWidget {
       children: [
         ListTile(
           leading: GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: ((context) => Profile_Page()),
-                ),
-              );
-            },
+            onTap: () {},
             child: CircleAvatar(
               radius: 18,
               backgroundImage: AssetImage(profile_pic),
@@ -64,6 +57,7 @@ class InstaPost_model extends StatelessWidget {
         Image.asset(
           upload_pic,
           height: 320,
+          fit: BoxFit.fill,
         ),
         // ----------------------Main Image ends-------------------------------------
         //------------------------------------------------------------------------------
