@@ -8,7 +8,7 @@ class Insta_HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      controller: ScrollController(),
+      // controller: ScrollController(),
       // physics: NeverScrollableScrollPhysics(parent: ScrollPhysics()),
       child: Column(
         children: [
