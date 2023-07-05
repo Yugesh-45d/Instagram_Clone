@@ -5,6 +5,7 @@ class SearchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -18,6 +19,10 @@ class SearchPage extends StatelessWidget {
           ),
         ),
       ],
+=======
+    return Center(
+      child: Text("Search"),
+>>>>>>> d6ab9743e0d7c5a1221f3798ea7e9d05ea040c52
     );
   }
 }
