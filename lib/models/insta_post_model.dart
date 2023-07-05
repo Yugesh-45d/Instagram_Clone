@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:instagram/screens/profile_page.dart';
 
 class InstaPost_model extends StatelessWidget {
   final String profile_pic;
