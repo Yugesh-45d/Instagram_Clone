@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class InstaPost_model extends StatelessWidget {
+class InstaPost_model extends StatefulWidget {
   final String profile_pic;
   final String username;
   final String location;
@@ -17,6 +17,13 @@ class InstaPost_model extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<InstaPost_model> createState() => _InstaPost_modelState();
+}
+
+class _InstaPost_modelState extends State<InstaPost_model> {
+  bool bookmarked = true;
+  bool liked = true;
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: [
@@ -25,18 +32,30 @@ class InstaPost_model extends StatelessWidget {
             onTap: () {},
             child: CircleAvatar(
               radius: 18,
-              backgroundImage: AssetImage(profile_pic),
+              backgroundImage: AssetImage(widget.profile_pic),
             ),
           ),
-          title: Text(
-            username,
-            style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-            ),
+          title: Row(
+            children: [
+              Text(
+                widget.username,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(
+                width: 4,
+              ),
+              Image.asset(
+                "assets/verification.png",
+                height: 16,
+                width: 16,
+              ),
+            ],
           ),
           subtitle: Text(
-            location,
+            widget.location,
             style: TextStyle(
               color: Colors.black,
             ),
@@ -54,7 +73,7 @@ class InstaPost_model extends StatelessWidget {
         //---------------------------------------------------------------------------
         //------------------------Main Image Begins----------------------------------
         Image.asset(
-          upload_pic,
+          widget.upload_pic,
           height: 320,
           fit: BoxFit.fill,
         ),
@@ -72,9 +91,24 @@ class InstaPost_model extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  Icon(
-                    Icons.favorite_outline_rounded,
-                    size: 28,
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        liked = !liked;
+                      });
+                    },
+                    child: Container(
+                      child: liked
+                          ? Icon(
+                              Icons.favorite_outline_rounded,
+                              size: 32,
+                            )
+                          : Icon(
+                              Icons.favorite,
+                              size: 32,
+                              color: Colors.red,
+                            ),
+                    ),
                   ),
                   SizedBox(
                     width: 24,
@@ -99,9 +133,23 @@ class InstaPost_model extends StatelessWidget {
                 top: 8,
                 bottom: 8,
               ),
-              child: Icon(
-                Icons.bookmark_border_sharp,
-                size: 28,
+              child: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    bookmarked = !bookmarked;
+                  });
+                },
+                child: bookmarked
+                    ? Image.asset(
+                        "assets/bookmark.png",
+                        height: 28,
+                        width: 28,
+                      )
+                    : Image.asset(
+                        "assets/bookmark_fill.png",
+                        height: 28,
+                        width: 28,
+                      ),
               ),
             ),
           ],
@@ -136,7 +184,7 @@ class InstaPost_model extends StatelessWidget {
           child: Row(
             children: [
               Text(
-                upload_date,
+                widget.upload_date,
                 style: TextStyle(
                   color: Colors.grey,
                   fontSize: 12,

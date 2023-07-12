@@ -18,10 +18,15 @@ class Insta_HomePage extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.only(left: 16),
-                child: Image(
-                  image: AssetImage("assets/2.png"),
-                  height: 64,
-                  width: 120,
+                child: Row(
+                  children: [
+                    Image(
+                      image: AssetImage("assets/2.png"),
+                      height: 64,
+                      width: 120,
+                    ),
+                    Icon(Icons.arrow_drop_down),
+                  ],
                 ),
               ),
               Padding(
@@ -35,9 +40,17 @@ class Insta_HomePage extends StatelessWidget {
                     SizedBox(
                       width: 24,
                     ),
-                    Icon(
-                      Icons.messenger_outline_rounded,
-                      size: 28,
+                    // Icon(
+                    //   Icons.messenger_outline_rounded,
+                    //   size: 28,
+                    // ),
+                    Container(
+                      decoration: BoxDecoration(),
+                      child: Image.asset(
+                        "assets/messenger.png",
+                        height: 28,
+                        width: 28,
+                      ),
                     ),
                   ],
                 ),

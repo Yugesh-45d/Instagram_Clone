@@ -6,7 +6,6 @@ import 'package:instagram/screens/reels_page.dart';
 import 'package:instagram/screens/search_page.dart';
 import 'home_page.dart';
 
-
 class MainPage extends StatefulWidget {
   MainPage({super.key});
 
@@ -15,6 +14,7 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  // bool buttonPressed = false;
 
   int selected_index = 0;
   List<Widget> pages = [
@@ -24,20 +24,15 @@ class _MainPageState extends State<MainPage> {
     ReelsPage(),
     Profile_Page(),
   ];
-  var selectedIndex = 0;
 
   getBody() {
-
     return pages[selected_index];
-
-
   }
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-
         body: getBody(),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: selected_index,
@@ -49,9 +44,16 @@ class _MainPageState extends State<MainPage> {
           type: BottomNavigationBarType.fixed,
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              icon: Icon(
+              icon:
+                  // onPressed: () {
+                  //   setState(() {
+                  //     buttonPressed = !buttonPressed;
+                  //   });
+                  // },
+                  Icon(
                 Icons.home_filled,
                 color: Colors.black,
+                // buttonPressed ? Icons.home_filled : Icons.home_outlined,
               ),
               label: "",
             ),
