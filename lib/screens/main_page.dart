@@ -15,6 +15,11 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   // bool buttonPressed = false;
+  // bool button1 = true;
+  // bool button2 = true;
+  // bool button3 = true;
+  // bool button4 = true;
+  // bool button5 = true;
 
   int selected_index = 0;
   List<Widget> pages = [
@@ -24,6 +29,12 @@ class _MainPageState extends State<MainPage> {
     ReelsPage(),
     Profile_Page(),
   ];
+
+  // void buttonPressed() {
+  //   setState(() {
+
+  //   });
+  // }
 
   getBody() {
     return pages[selected_index];
@@ -43,6 +54,66 @@ class _MainPageState extends State<MainPage> {
           },
           type: BottomNavigationBarType.fixed,
           items: <BottomNavigationBarItem>[
+            //------------Botton Nav bar on click wala banauna yo gareko tara vaena----------
+            // BottomNavigationBarItem(
+            //   icon: IconButton(
+            //     onPressed: () {
+            //       setState(() {
+            //         button1 = !button1;
+            //       });
+            //     },
+            //     icon: button1 ? Icon(Icons.home) : Icon(Icons.home_outlined),
+            //   ),
+            //   label: "",
+            // ),
+            // BottomNavigationBarItem(
+            //   icon: IconButton(
+            //     onPressed: () {
+            //       // setState(() {
+            //       //   button1 = !button1;
+            //       // });
+            //       buttonPressed();
+            //     },
+            //     icon: button2 ? Icon(Icons.home) : Icon(Icons.home_outlined),
+            //   ),
+            //   label: "",
+            // ),
+            // BottomNavigationBarItem(
+            //   icon: IconButton(
+            //     onPressed: () {
+            //       // setState(() {
+            //       //   button1 = !button1;
+            //       // });
+            //       buttonPressed();
+            //     },
+            //     icon: button3 ? Icon(Icons.home) : Icon(Icons.home_outlined),
+            //   ),
+            //   label: "",
+            // ),
+            // BottomNavigationBarItem(
+            //   icon: IconButton(
+            //     onPressed: () {
+            //       // setState(() {
+            //       //   button1 = !button1;
+            //       // });
+            //       buttonPressed();
+            //     },
+            //     icon: button4 ? Icon(Icons.home) : Icon(Icons.home_outlined),
+            //   ),
+            //   label: "",
+            // ),
+            // BottomNavigationBarItem(
+            //   icon: IconButton(
+            //     onPressed: () {
+            //       // setState(() {
+            //       //   button1 = !button1;
+            //       // });
+            //       buttonPressed();
+            //     },
+            //     icon: button5 ? Icon(Icons.home) : Icon(Icons.home_outlined),
+            //   ),
+            //   label: "",
+            // ),
             BottomNavigationBarItem(
               icon:
                   // onPressed: () {
@@ -79,9 +150,15 @@ class _MainPageState extends State<MainPage> {
               label: "",
             ),
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.account_circle_outlined,
-                color: Colors.black,
+              // icon: Icon(
+              //   Icons.account_circle_outlined,
+              //   color: Colors.black,
+              // ),
+              icon: CircleAvatar(
+                radius: 16,
+                backgroundImage: AssetImage(
+                  "assets/1.jpg",
+                ),
               ),
               label: "",
             ),

@@ -25,7 +25,12 @@ class Insta_HomePage extends StatelessWidget {
                       height: 64,
                       width: 120,
                     ),
-                    Icon(Icons.arrow_drop_down),
+                    // Icon(Icons.arrow_drop_down),
+                    Image.asset(
+                      "assets/dropdown.png",
+                      height: 24,
+                      width: 24,
+                    ),
                   ],
                 ),
               ),
@@ -40,12 +45,7 @@ class Insta_HomePage extends StatelessWidget {
                     SizedBox(
                       width: 24,
                     ),
-                    // Icon(
-                    //   Icons.messenger_outline_rounded,
-                    //   size: 28,
-                    // ),
                     Container(
-                      decoration: BoxDecoration(),
                       child: Image.asset(
                         "assets/messenger.png",
                         height: 28,

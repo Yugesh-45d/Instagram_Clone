@@ -123,6 +123,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.3"
+  rich_readmore:
+    dependency: "direct main"
+    description:
+      name: rich_readmore
+      sha256: "30ea75276782fd88fca3441f38885b340c935d6b74eedb63d15a712ef5949daf"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.5"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -184,13 +192,5 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
-  water_drop_nav_bar:
-    dependency: "direct main"
-    description:
-      name: water_drop_nav_bar
-      sha256: f8be3696ce184f043ffdcb28b17418a4e46c83678b5d8d270b6393a9e5d5f36b
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.2.0+5"
 sdks:
   dart: ">=3.0.3 <4.0.0"

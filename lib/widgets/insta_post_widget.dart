@@ -16,6 +16,7 @@ class InstaPost_widget extends StatelessWidget {
             location: e["location"],
             upload_pic: e["upload_pic"],
             upload_date: e["upload_date"],
+            bio: e["bio"],
           ),
         ).toList(),
       ],

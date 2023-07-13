@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:instagram/widgets/insta_comment_widget.dart';
+import 'package:rich_readmore/rich_readmore.dart';
 
 class InstaPost_model extends StatefulWidget {
   final String profile_pic;
@@ -6,6 +8,7 @@ class InstaPost_model extends StatefulWidget {
   final String location;
   final String upload_pic;
   final String upload_date;
+  final String bio;
 
   const InstaPost_model({
     Key? key,
@@ -14,6 +17,7 @@ class InstaPost_model extends StatefulWidget {
     required this.location,
     required this.upload_pic,
     required this.upload_date,
+    required this.bio,
   }) : super(key: key);
 
   @override
@@ -26,14 +30,12 @@ class _InstaPost_modelState extends State<InstaPost_model> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         ListTile(
-          leading: GestureDetector(
-            onTap: () {},
-            child: CircleAvatar(
-              radius: 18,
-              backgroundImage: AssetImage(widget.profile_pic),
-            ),
+          leading: CircleAvatar(
+            radius: 18,
+            backgroundImage: AssetImage(widget.profile_pic),
           ),
           title: Row(
             children: [
@@ -69,17 +71,15 @@ class _InstaPost_modelState extends State<InstaPost_model> {
             ),
           ),
         ),
-        //------------------------Name and avatar wala row ends-----------------------
-        //---------------------------------------------------------------------------
-        //------------------------Main Image Begins----------------------------------
-        Image.asset(
-          widget.upload_pic,
-          height: 320,
-          fit: BoxFit.fill,
+        //---------------MAIN IMAGE HERE---------------------
+        Container(
+          alignment: Alignment.center,
+          child: Image.asset(
+            widget.upload_pic,
+            height: 320,
+            fit: BoxFit.fill,
+          ),
         ),
-        // ----------------------Main Image ends-------------------------------------
-        //------------------------------------------------------------------------------
-        //------------------------Like,Comment, Share, Bookmark Section Begins------------
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -113,16 +113,18 @@ class _InstaPost_modelState extends State<InstaPost_model> {
                   SizedBox(
                     width: 24,
                   ),
-                  Icon(
-                    Icons.mode_comment_outlined,
-                    size: 26,
+                  Image.asset(
+                    "assets/comment.png",
+                    height: 28,
+                    width: 28,
                   ),
                   SizedBox(
                     width: 24,
                   ),
-                  Icon(
-                    Icons.send_rounded,
-                    size: 28,
+                  Image.asset(
+                    "assets/share.png",
+                    height: 24,
+                    width: 24,
                   ),
                 ],
               ),
@@ -142,21 +144,16 @@ class _InstaPost_modelState extends State<InstaPost_model> {
                 child: bookmarked
                     ? Image.asset(
                         "assets/bookmark.png",
-                        height: 28,
-                        width: 28,
+                        height: 32,
                       )
                     : Image.asset(
                         "assets/bookmark_fill.png",
-                        height: 28,
-                        width: 28,
+                        height: 32,
                       ),
               ),
             ),
           ],
         ),
-        //------------------------Like,Comment, Share, Bookmark Section Ends------------
-        //------------------------------------------------------------------------------
-        //------------------------Liked by details text begins-----------------------------
         Padding(
           padding: const EdgeInsets.only(left: 16),
           child: Row(
@@ -170,15 +167,84 @@ class _InstaPost_modelState extends State<InstaPost_model> {
                 "and ",
               ),
               Text(
-                "others",
+                "345 others",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
             ],
           ),
         ),
-        //------------------------Liked by details text ends-----------------------------
-        //----------------------------------------------------------------------------------
-        //--------------------------Date Section Begins-----------------------------------
+        // RichReadMoreText.fromString(
+        //   // text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        //   text: ,
+        //   textStyle: TextStyle(color: Colors.purpleAccent),
+        //   settings: LengthModeSettings(
+        //     trimLength: 100,
+        //     trimCollapsedText: 'more',
+        //     // trimExpandedText: ' Collapse ',
+        //     //  onPressReadMore: () {
+        //     //    /// specific method to be called on press to show more
+        //     //  },
+        //     //  onPressReadLess: () {
+        //     //   //  / specific method to be called on press to show less
+        //     //  },
+        //     lessStyle: TextStyle(color: Colors.blue),
+        //     moreStyle: TextStyle(color: Colors.blue),
+        //   ),
+        // ),
+        Padding(
+          padding: const EdgeInsets.only(
+            top: 4,
+            left: 16,
+            right: 16,
+          ),
+          child: RichReadMoreText(
+            TextSpan(
+              children: [
+                TextSpan(
+                  text: widget.username,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+                TextSpan(
+                  text: widget.bio,
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                ),
+              ],
+            ),
+            settings: LineModeSettings(
+              trimLines: 1,
+              trimCollapsedText: '... more',
+              trimExpandedText: '',
+              moreStyle: TextStyle(
+                color: Colors.grey,
+              ),
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 16, top: 4),
+          child: GestureDetector(
+            onTap: () {
+              showModalBottomSheet(
+                  isScrollControlled: true,
+                  context: context,
+                  backgroundColor: Colors.transparent,
+                  builder: (context) {
+                    return InstaComment();
+                  });
+            },
+            child: Text(
+              "View all 28 comments",
+              style: TextStyle(
+                color: Colors.grey,
+              ),
+            ),
+          ),
+        ),
         Padding(
           padding: const EdgeInsets.only(left: 16, top: 4),
           child: Row(
@@ -193,8 +259,6 @@ class _InstaPost_modelState extends State<InstaPost_model> {
             ],
           ),
         ),
-        //----------------------------Date Section Ends-------------------------------------
-        //---------------------------------------------------------------------------------
       ],
     );
   }
