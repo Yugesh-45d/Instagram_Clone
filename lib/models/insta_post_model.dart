@@ -30,8 +30,10 @@ class _InstaPost_modelState extends State<InstaPost_model> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        
         ListTile(
           leading: CircleAvatar(
             radius: 18,
@@ -173,24 +175,6 @@ class _InstaPost_modelState extends State<InstaPost_model> {
             ],
           ),
         ),
-        // RichReadMoreText.fromString(
-        //   // text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        //   text: ,
-        //   textStyle: TextStyle(color: Colors.purpleAccent),
-        //   settings: LengthModeSettings(
-        //     trimLength: 100,
-        //     trimCollapsedText: 'more',
-        //     // trimExpandedText: ' Collapse ',
-        //     //  onPressReadMore: () {
-        //     //    /// specific method to be called on press to show more
-        //     //  },
-        //     //  onPressReadLess: () {
-        //     //   //  / specific method to be called on press to show less
-        //     //  },
-        //     lessStyle: TextStyle(color: Colors.blue),
-        //     moreStyle: TextStyle(color: Colors.blue),
-        //   ),
-        // ),
         Padding(
           padding: const EdgeInsets.only(
             top: 4,

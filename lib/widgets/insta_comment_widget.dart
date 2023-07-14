@@ -57,23 +57,62 @@ class _InstaCommentState extends State<InstaComment> {
                   ),
                 ),
                 SizedBox(
-                  width: 4,
+                  width: 8,
                 ),
                 Text(
                   "5m",
                   style: TextStyle(
                     color: Colors.grey,
-                    fontSize: 14,
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ],
             ),
-            subtitle: Text(
-              "Adventure is all about gaining new experiences and meeting new peoples and sharing thoughts with each other.",
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 16,
-              ),
+            subtitle: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Adventure is all about gaining new experiences and meeting new peoples and sharing thoughts with each other.",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                  ),
+                ),
+                SizedBox(
+                  height: 4,
+                ),
+                Text(
+                  "Reply",
+                  style: TextStyle(
+                    color: Colors.grey,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(
+                  height: 16,
+                ),
+                Row(
+                  children: [
+                    SizedBox(
+                      width: 40,
+                      child: Divider(
+                        thickness: 1,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    Text(
+                      "View 4 more replies",
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
             trailing: Column(
               children: [
@@ -81,7 +120,6 @@ class _InstaCommentState extends State<InstaComment> {
                   onTap: () {
                     setState(() {
                       liked = !liked;
-                      // likeCounter++;
                       if (liked == false) {
                         likeCounter++;
                       } else {
@@ -110,6 +148,12 @@ class _InstaCommentState extends State<InstaComment> {
                   ),
                 ),
               ],
+            ),
+          ),
+          Positioned(
+            bottom: 0,
+            child: Text(
+              "Hello",
             ),
           ),
         ],
