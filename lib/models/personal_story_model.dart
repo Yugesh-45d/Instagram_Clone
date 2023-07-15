@@ -33,7 +33,9 @@ class Personal_Story_Model extends StatelessWidget {
           SizedBox(
             height: 4,
           ),
-          Text(name),
+          Text(
+            name,
+          ),
         ],
       ),
     );

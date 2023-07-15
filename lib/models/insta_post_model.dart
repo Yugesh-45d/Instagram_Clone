@@ -30,10 +30,8 @@ class _InstaPost_modelState extends State<InstaPost_model> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        
         ListTile(
           leading: CircleAvatar(
             radius: 18,
@@ -78,8 +76,8 @@ class _InstaPost_modelState extends State<InstaPost_model> {
           alignment: Alignment.center,
           child: Image.asset(
             widget.upload_pic,
-            height: 320,
-            fit: BoxFit.fill,
+            // height: 320,
+            // fit: BoxFit.fill,
           ),
         ),
         Row(

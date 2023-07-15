@@ -45,8 +45,9 @@ class Profile_Page_Model extends StatelessWidget {
                         },
                       );
                     },
-                    child: Icon(
-                      Icons.arrow_drop_down,
+                    child: Image.asset(
+                      "assets/dropdown.png",
+                      height: 24,
                     ),
                   ),
                 ],
@@ -55,18 +56,17 @@ class Profile_Page_Model extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      
                       showModalBottomSheet(
-                        isScrollControlled: true,
+                          isScrollControlled: true,
                           context: context,
                           backgroundColor: Colors.transparent,
                           builder: (context) {
                             return CreateModal();
                           });
                     },
-                    child: Icon(
-                      Icons.add_box_outlined,
-                      size: 32,
+                    child: Image.asset(
+                      "assets/add.png",
+                      height: 28,
                     ),
                   ),
                   SizedBox(
@@ -82,9 +82,8 @@ class Profile_Page_Model extends StatelessWidget {
                             return HamburgerModal();
                           });
                     },
-                    child: Icon(
-                      Icons.menu,
-                      size: 32,
+                    child: Image.asset(
+                      "assets/menu.png",
                     ),
                   ),
                 ],

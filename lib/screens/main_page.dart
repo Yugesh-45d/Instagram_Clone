@@ -115,47 +115,46 @@ class _MainPageState extends State<MainPage> {
             //   label: "",
             // ),
             BottomNavigationBarItem(
-              icon:
-                  // onPressed: () {
-                  //   setState(() {
-                  //     buttonPressed = !buttonPressed;
-                  //   });
-                  // },
-                  Icon(
-                Icons.home_filled,
-                color: Colors.black,
-                // buttonPressed ? Icons.home_filled : Icons.home_outlined,
-              ),
-              label: "",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.search,
-                color: Colors.black,
-              ),
-              label: "",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.add_box_outlined,
-                color: Colors.black,
-              ),
-              label: "",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.video_library_outlined,
-                color: Colors.black,
-              ),
-              label: "",
-            ),
-            BottomNavigationBarItem(
-              // icon: Icon(
-              //   Icons.account_circle_outlined,
+              // icon:
+              // onPressed: () {
+              //   setState(() {
+              //     buttonPressed = !buttonPressed;
+              //   });
+              // },
+              //     Icon(
+              //   Icons.home_filled,
               //   color: Colors.black,
               // ),
+              icon: Image.asset(
+                "assets/home_filled.png",
+                height: 28,
+              ),
+              label: "",
+            ),
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                "assets/search.png",
+                height: 28,
+              ),
+              label: "",
+            ),
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                "assets/add.png",
+                height: 28,
+              ),
+              label: "",
+            ),
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                "assets/reels.png",
+                height: 32,
+              ),
+              label: "",
+            ),
+            BottomNavigationBarItem(
               icon: CircleAvatar(
-                radius: 16,
+                radius: 14,
                 backgroundImage: AssetImage(
                   "assets/1.jpg",
                 ),
