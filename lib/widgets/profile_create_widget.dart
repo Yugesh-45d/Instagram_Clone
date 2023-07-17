@@ -40,15 +40,14 @@ class _CreateModalState extends State<CreateModal> {
             visualDensity: VisualDensity(
               vertical: -2,
             ),
-            leading: Icon(
-              Icons.video_collection_outlined,
-              color: Colors.black,
-              size: 28,
+            leading: Image.asset(
+              "assets/reels.png",
+              height: 32,
             ),
             title: Text(
               "Reel",
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 16,
               ),
             ),
           ),
@@ -69,7 +68,7 @@ class _CreateModalState extends State<CreateModal> {
             title: Text(
               "Post",
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 16,
               ),
             ),
           ),
@@ -90,7 +89,7 @@ class _CreateModalState extends State<CreateModal> {
             title: Text(
               "Story",
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 16,
               ),
             ),
           ),
@@ -111,7 +110,7 @@ class _CreateModalState extends State<CreateModal> {
             title: Text(
               "Story Highlight",
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 16,
               ),
             ),
           ),
@@ -124,15 +123,14 @@ class _CreateModalState extends State<CreateModal> {
             visualDensity: VisualDensity(
               vertical: -2,
             ),
-            leading: Icon(
-              Icons.live_tv,
-              color: Colors.black,
-              size: 28,
+            leading: Image.asset(
+              "assets/live.png",
+              height: 32,
             ),
             title: Text(
               "Live",
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 16,
               ),
             ),
           ),
@@ -153,7 +151,7 @@ class _CreateModalState extends State<CreateModal> {
             title: Text(
               "Guide",
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 16,
               ),
             ),
           ),

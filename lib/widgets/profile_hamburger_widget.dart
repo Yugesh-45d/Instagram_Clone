@@ -39,7 +39,7 @@ class _HamburgerModalState extends State<HamburgerModal> {
             title: Text(
               "Settings and privacy",
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 16,
               ),
             ),
           ),
@@ -56,7 +56,7 @@ class _HamburgerModalState extends State<HamburgerModal> {
             title: Text(
               "Your activity",
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 16,
               ),
             ),
           ),
@@ -65,15 +65,14 @@ class _HamburgerModalState extends State<HamburgerModal> {
             visualDensity: VisualDensity(
               vertical: 0,
             ),
-            leading: Icon(
-              Icons.archive_outlined,
-              color: Colors.black,
-              size: 28,
+            leading: Image.asset(
+              "assets/history.png",
+              height: 28,
             ),
             title: Text(
               "Archive",
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 16,
               ),
             ),
           ),
@@ -90,7 +89,7 @@ class _HamburgerModalState extends State<HamburgerModal> {
             title: Text(
               "QR code",
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 16,
               ),
             ),
           ),
@@ -99,15 +98,14 @@ class _HamburgerModalState extends State<HamburgerModal> {
             visualDensity: VisualDensity(
               vertical: 0,
             ),
-            leading: Icon(
-              Icons.bookmark_border_rounded,
-              color: Colors.black,
-              size: 28,
+            leading: Image.asset(
+              "assets/bookmark.png",
+              height: 28,
             ),
             title: Text(
               "Saved",
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 16,
               ),
             ),
           ),
@@ -116,15 +114,14 @@ class _HamburgerModalState extends State<HamburgerModal> {
             visualDensity: VisualDensity(
               vertical: 0,
             ),
-            leading: Icon(
-              Icons.group,
-              color: Colors.black,
-              size: 28,
+            leading: Image.asset(
+              "assets/people.png",
+              height: 28,
             ),
             title: Text(
               "Supervision",
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 16,
               ),
             ),
           ),
@@ -141,7 +138,7 @@ class _HamburgerModalState extends State<HamburgerModal> {
             title: Text(
               "Orders and payments",
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 16,
               ),
             ),
           ),
@@ -158,7 +155,7 @@ class _HamburgerModalState extends State<HamburgerModal> {
             title: Text(
               "Close Friends",
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 16,
               ),
             ),
           ),
@@ -175,7 +172,7 @@ class _HamburgerModalState extends State<HamburgerModal> {
             title: Text(
               "Favorites",
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 16,
               ),
             ),
           ),

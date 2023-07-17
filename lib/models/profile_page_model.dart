@@ -25,32 +25,32 @@ class Profile_Page_Model extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                children: [
-                  Text(
-                    username,
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      showModalBottomSheet(
-                        isScrollControlled: true,
-                        context: context,
-                        backgroundColor: Colors.transparent,
-                        builder: (context) {
-                          return AccountModal();
-                        },
-                      );
+              GestureDetector(
+                onTap: () {
+                  showModalBottomSheet(
+                    isScrollControlled: true,
+                    context: context,
+                    backgroundColor: Colors.transparent,
+                    builder: (context) {
+                      return AccountModal();
                     },
-                    child: Image.asset(
+                  );
+                },
+                child: Row(
+                  children: [
+                    Text(
+                      username,
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Image.asset(
                       "assets/dropdown.png",
                       height: 24,
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               Row(
                 children: [

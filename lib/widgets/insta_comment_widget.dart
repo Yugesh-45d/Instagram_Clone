@@ -150,12 +150,7 @@ class _InstaCommentState extends State<InstaComment> {
               ],
             ),
           ),
-          Positioned(
-            bottom: 0,
-            child: Text(
-              "Hello",
-            ),
-          ),
+        
         ],
       ),
     );

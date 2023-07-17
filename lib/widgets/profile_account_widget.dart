@@ -49,10 +49,18 @@ class _AccountModalState extends State<AccountModal> {
             height: 16,
           ),
           ListTile(
-            leading: Icon(
-              Icons.add_circle_outline_rounded,
-              size: 64,
-              color: Colors.black,
+            leading: Container(
+              padding: EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: Colors.grey,
+                ),
+              ),
+              child: Icon(
+                Icons.add,
+                color: Colors.black,
+              ),
             ),
             title: Text(
               "Add account",

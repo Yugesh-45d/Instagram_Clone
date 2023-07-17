@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram/widgets/instaPost_kebab_menu_widget.dart';
 import 'package:instagram/widgets/insta_comment_widget.dart';
 import 'package:rich_readmore/rich_readmore.dart';
 
@@ -27,6 +28,17 @@ class InstaPost_model extends StatefulWidget {
 class _InstaPost_modelState extends State<InstaPost_model> {
   bool bookmarked = true;
   bool liked = true;
+  int likeCounter = 86;
+  void commentModal() {
+    showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        backgroundColor: Colors.transparent,
+        builder: (context) {
+          return InstaComment();
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -63,7 +75,15 @@ class _InstaPost_modelState extends State<InstaPost_model> {
             ),
           ),
           trailing: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              showModalBottomSheet(
+                  isScrollControlled: true,
+                  backgroundColor: Colors.transparent,
+                  context: context,
+                  builder: (context) {
+                    return InstaPost_KebabMenu();
+                  });
+            },
             icon: Icon(
               Icons.more_vert_outlined,
               size: 24,
@@ -95,6 +115,11 @@ class _InstaPost_modelState extends State<InstaPost_model> {
                     onTap: () {
                       setState(() {
                         liked = !liked;
+                        if (liked == false) {
+                          likeCounter++;
+                        } else {
+                          likeCounter--;
+                        }
                       });
                     },
                     child: Container(
@@ -113,10 +138,15 @@ class _InstaPost_modelState extends State<InstaPost_model> {
                   SizedBox(
                     width: 24,
                   ),
-                  Image.asset(
-                    "assets/comment.png",
-                    height: 28,
-                    width: 28,
+                  GestureDetector(
+                    onTap: () {
+                      commentModal();
+                    },
+                    child: Image.asset(
+                      "assets/comment.png",
+                      height: 28,
+                      width: 28,
+                    ),
                   ),
                   SizedBox(
                     width: 24,
@@ -167,7 +197,7 @@ class _InstaPost_modelState extends State<InstaPost_model> {
                 "and ",
               ),
               Text(
-                "345 others",
+                "$likeCounter others",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
             ],
@@ -211,13 +241,7 @@ class _InstaPost_modelState extends State<InstaPost_model> {
           padding: const EdgeInsets.only(left: 16, top: 4),
           child: GestureDetector(
             onTap: () {
-              showModalBottomSheet(
-                  isScrollControlled: true,
-                  context: context,
-                  backgroundColor: Colors.transparent,
-                  builder: (context) {
-                    return InstaComment();
-                  });
+              commentModal();
             },
             child: Text(
               "View all 28 comments",
