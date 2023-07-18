@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram/screens/mainpages/main_page.dart';
+import 'package:instagram/screens/logins/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -16,11 +16,11 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   navigateToHome() async {
-    await Future.delayed(Duration(milliseconds: 2000), () {});
+    await Future.delayed(Duration(milliseconds: 3000), () {});
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
-        builder: (context) => MainPage(),
+        builder: (context) => LoginScreen(),
       ),
     );
   }
