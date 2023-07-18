@@ -20,6 +20,7 @@ class Profile_Page_Widget extends StatelessWidget {
             bio: e['bio'],
           ),
         ),
+       
       ],
     );
   }

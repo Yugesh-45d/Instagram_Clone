@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram/widgets/insta_post_widget.dart';
+import 'package:instagram/widgets/message_section_widget.dart';
 import 'package:instagram/widgets/story_widget.dart';
 
 class Insta_HomePage extends StatefulWidget {
@@ -106,11 +107,16 @@ class _Insta_HomePageState extends State<Insta_HomePage> {
                     SizedBox(
                       width: 24,
                     ),
-                    Container(
-                      child: Image.asset(
-                        "assets/messenger.png",
-                        height: 28,
-                        width: 28,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => MessageSectionWidget()));
+                      },
+                      child: Container(
+                        child: Image.asset(
+                          "assets/messenger.png",
+                          height: 28,
+                          width: 28,
+                        ),
                       ),
                     ),
                   ],

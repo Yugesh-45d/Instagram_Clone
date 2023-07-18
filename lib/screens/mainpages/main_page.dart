@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'package:instagram/screens/new_post.dart';
-import 'package:instagram/screens/profile_page.dart';
-import 'package:instagram/screens/reels_page.dart';
-import 'package:instagram/screens/search_page.dart';
+import 'package:instagram/screens/mainpages/new_post.dart';
+import 'package:instagram/screens/mainpages/profile_page.dart';
+import 'package:instagram/screens/mainpages/reels_page.dart';
+import 'package:instagram/screens/mainpages/search_page.dart';
 import 'home_page.dart';
 
 class MainPage extends StatefulWidget {
