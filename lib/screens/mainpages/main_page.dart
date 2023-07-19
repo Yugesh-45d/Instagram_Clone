@@ -14,13 +14,6 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  // bool buttonPressed = false;
-  // bool button1 = true;
-  // bool button2 = true;
-  // bool button3 = true;
-  // bool button4 = true;
-  // bool button5 = true;
-
   int selected_index = 0;
   List<Widget> pages = [
     Insta_HomePage(),
@@ -29,13 +22,6 @@ class _MainPageState extends State<MainPage> {
     ReelsPage(),
     Profile_Page(),
   ];
-
-  // void buttonPressed() {
-  //   setState(() {
-
-  //   });
-  // }
-
   getBody() {
     return pages[selected_index];
   }
@@ -46,6 +32,10 @@ class _MainPageState extends State<MainPage> {
       child: Scaffold(
         body: getBody(),
         bottomNavigationBar: BottomNavigationBar(
+          selectedItemColor: Colors.black,
+          selectedIconTheme: IconThemeData(
+              // size: 36,
+              ),
           currentIndex: selected_index,
           onTap: (newIndex) {
             setState(() {
@@ -54,107 +44,49 @@ class _MainPageState extends State<MainPage> {
           },
           type: BottomNavigationBarType.fixed,
           items: <BottomNavigationBarItem>[
-            //------------Botton Nav bar on click wala banauna yo gareko tara vaena----------
-            // BottomNavigationBarItem(
-            //   icon: IconButton(
-            //     onPressed: () {
-            //       setState(() {
-            //         button1 = !button1;
-            //       });
-            //     },
-            //     icon: button1 ? Icon(Icons.home) : Icon(Icons.home_outlined),
-            //   ),
-            //   label: "",
-            // ),
-            // BottomNavigationBarItem(
-            //   icon: IconButton(
-            //     onPressed: () {
-            //       // setState(() {
-            //       //   button1 = !button1;
-            //       // });
-            //       buttonPressed();
-            //     },
-            //     icon: button2 ? Icon(Icons.home) : Icon(Icons.home_outlined),
-            //   ),
-            //   label: "",
-            // ),
-            // BottomNavigationBarItem(
-            //   icon: IconButton(
-            //     onPressed: () {
-            //       // setState(() {
-            //       //   button1 = !button1;
-            //       // });
-            //       buttonPressed();
-            //     },
-            //     icon: button3 ? Icon(Icons.home) : Icon(Icons.home_outlined),
-            //   ),
-            //   label: "",
-            // ),
-            // BottomNavigationBarItem(
-            //   icon: IconButton(
-            //     onPressed: () {
-            //       // setState(() {
-            //       //   button1 = !button1;
-            //       // });
-            //       buttonPressed();
-            //     },
-            //     icon: button4 ? Icon(Icons.home) : Icon(Icons.home_outlined),
-            //   ),
-            //   label: "",
-            // ),
-            // BottomNavigationBarItem(
-            //   icon: IconButton(
-            //     onPressed: () {
-            //       // setState(() {
-            //       //   button1 = !button1;
-            //       // });
-            //       buttonPressed();
-            //     },
-            //     icon: button5 ? Icon(Icons.home) : Icon(Icons.home_outlined),
-            //   ),
-            //   label: "",
-            // ),
             BottomNavigationBarItem(
-              // icon:
-              // onPressed: () {
-              //   setState(() {
-              //     buttonPressed = !buttonPressed;
-              //   });
-              // },
-              //     Icon(
-              //   Icons.home_filled,
-              //   color: Colors.black,
+              // icon: Image.asset(
+              //   "assets/home_filled.png",
+              // height: 28,
               // ),
-              icon: Image.asset(
-                "assets/home_filled.png",
-                height: 28,
+              icon: Icon(
+                Icons.home_filled,
+                size: 28,
               ),
               label: "",
             ),
             BottomNavigationBarItem(
-              icon: Image.asset(
-                "assets/search.png",
-                height: 28,
+              icon: Icon(
+                Icons.search,
+                size: 28,
               ),
               label: "",
             ),
             BottomNavigationBarItem(
-              icon: Image.asset(
-                "assets/add.png",
-                height: 28,
+              // icon: Image.asset(
+              //   "assets/add.png",
+              //   height: 28,
+              // ),
+              icon: Icon(
+                Icons.add_box,
+                size: 28,
               ),
               label: "",
             ),
             BottomNavigationBarItem(
-              icon: Image.asset(
-                "assets/reels.png",
-                height: 32,
+              // icon: Image.asset(
+              //   "assets/reels.png",
+              //   height: 32,
+              // ),
+              icon: Icon(
+                Icons.video_collection_rounded,
+                size: 28,
               ),
               label: "",
             ),
             BottomNavigationBarItem(
               icon: CircleAvatar(
-                radius: 14,
+                radius: 16,
                 backgroundImage: AssetImage(
                   "assets/1.jpg",
                 ),
