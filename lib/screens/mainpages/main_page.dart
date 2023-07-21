@@ -30,12 +30,11 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        
         body: getBody(),
         bottomNavigationBar: BottomNavigationBar(
           selectedItemColor: Colors.black,
-          selectedIconTheme: IconThemeData(
-              // size: 36,
-              ),
+          selectedIconTheme: IconThemeData(),
           currentIndex: selected_index,
           onTap: (newIndex) {
             setState(() {

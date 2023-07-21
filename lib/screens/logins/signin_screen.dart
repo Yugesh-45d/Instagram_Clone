@@ -11,19 +11,22 @@ class SigninScreen extends StatefulWidget {
 }
 
 class _SigninScreenState extends State<SigninScreen> {
-  String email = '';
-  String password = '';
+  @override
+  void initState() {
+    emailController = TextEditingController();
+    passwordController = TextEditingController();
+    super.initState();
+  }
+
+  final _formKey = GlobalKey<FormState>();
+
+  late TextEditingController emailController;
+  late TextEditingController passwordController;
+
   bool showPassword = false;
 
   void loginData() {
-    if (email == "1" && password == "1") {
-      // ScaffoldMessenger.of(context).showSnackBar(
-      //   SnackBar(
-      //     content: Text(
-      //       "Hurray vayo",
-      //     ),
-      //   ),
-      // );
+    if (emailController.text == "1" && passwordController.text == "1") {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: (context) => MainPage(),
@@ -33,7 +36,7 @@ class _SigninScreenState extends State<SigninScreen> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
-            "Wrong Email or Password",
+            "Invalid Email or Password",
           ),
         ),
       );
@@ -41,137 +44,156 @@ class _SigninScreenState extends State<SigninScreen> {
   }
 
   @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xffD9DBE9),
         body: SingleChildScrollView(
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
+              Form(
+                autovalidateMode: AutovalidateMode.always,
+                key: _formKey,
+                child: Column(
                   children: [
-                    IconButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      icon: Icon(
-                        Icons.arrow_back,
-                        size: 32,
+                    Padding(
+                      padding: const EdgeInsets.only(left: 16, top: 16),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          IconButton(
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            icon: Icon(
+                              Icons.arrow_back,
+                              size: 32,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Text(
+                      "English(US)",
+                    ),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    Image.asset(
+                      "assets/insta2.png",
+                      height: 64,
+                    ),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          left: 16, right: 16, top: 8, bottom: 8),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16),
+                          color: Colors.white,
+                        ),
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            labelText: "Username, email or mobile number",
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                          ),
+                          keyboardType: TextInputType.emailAddress,
+                          controller: emailController,
+                          validator: (String? value) {
+                            if (value!.isEmpty) {
+                              return "Username is required";
+                            } else {
+                              return null;
+                            }
+                          },
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          left: 16, right: 16, top: 8, bottom: 8),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16),
+                          color: Colors.white,
+                        ),
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            labelText: "Password",
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            suffixIcon: IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  showPassword = !showPassword;
+                                });
+                              },
+                              icon: showPassword
+                                  ? Icon(
+                                      Icons.visibility,
+                                    )
+                                  : Icon(
+                                      Icons.visibility_off,
+                                    ),
+                            ),
+                          ),
+                          obscureText: !showPassword,
+                          controller: passwordController,
+                          validator: (String? value) {
+                            if (value!.isEmpty) {
+                              return "Password is required";
+                            } else {
+                              return null;
+                            }
+                          },
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          left: 16, right: 16, top: 8, bottom: 8),
+                      child: SizedBox(
+                        height: 48,
+                        width: double.maxFinite,
+                        child: TextButton(
+                          style: TextButton.styleFrom(
+                            backgroundColor: Colors.blue.shade800,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(24),
+                            ),
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              loginData();
+                            });
+                          },
+                          child: Text(
+                            "Log in",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                            ),
+                          ),
+                        ),
                       ),
                     ),
                   ],
                 ),
               ),
-              SizedBox(
-                height: 24,
-              ),
-              Text(
-                "English(US)",
-              ),
-              SizedBox(
-                height: 40,
-              ),
-              Image.asset(
-                "assets/insta2.png",
-                height: 64,
-              ),
-              SizedBox(
-                height: 40,
-              ),
               Padding(
-                padding: const EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 8),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    color: Colors.white,
-                  ),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      label: Text("Username,email or mobile number"),
-                      hintText: "Email",
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                    ),
-                    keyboardType: TextInputType.emailAddress,
-                    onChanged: (String data) {
-                      setState(() {
-                        email = data;
-                      });
-                    },
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 8),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    color: Colors.white,
-                  ),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      label: Text("Password"),
-                      hintText: "Password",
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      suffixIcon: IconButton(
-                        onPressed: () {
-                          setState(() {
-                            showPassword = !showPassword;
-                          });
-                        },
-                        icon: showPassword
-                            ? Icon(
-                                Icons.visibility,
-                              )
-                            : Icon(
-                                Icons.visibility_off,
-                              ),
-                      ),
-                    ),
-                    obscureText: !showPassword,
-                    onChanged: (String data) {
-                      setState(() {
-                        password = data;
-                      });
-                    },
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 8),
-                child: SizedBox(
-                  height: 48,
-                  width: double.maxFinite,
-                  child: TextButton(
-                    style: TextButton.styleFrom(
-                      backgroundColor: Colors.blue.shade800,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(24),
-                      ),
-                    ),
-                    onPressed: () {
-                      setState(() {
-                        loginData();
-                      });
-                    },
-                    child: Text(
-                      "Log in",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 8),
+                padding: const EdgeInsets.only(
+                    left: 16, right: 16, top: 8, bottom: 8),
                 child: Text(
                   "Forgot password?",
                   style: TextStyle(

@@ -14,7 +14,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xffD9DBE9),
+        backgroundColor: Color(0xFFD9EBFF),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -63,7 +63,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 8),
+                padding: const EdgeInsets.only(
+                    left: 16, right: 16, top: 8, bottom: 8),
                 child: SizedBox(
                   height: 48,
                   width: double.maxFinite,
@@ -92,7 +93,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 8),
+                padding: const EdgeInsets.only(
+                    left: 16, right: 16, top: 8, bottom: 8),
                 child: SizedBox(
                   height: 48,
                   width: double.maxFinite,
@@ -124,7 +126,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 48,
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 8),
+                padding: const EdgeInsets.only(
+                    left: 16, right: 16, top: 8, bottom: 8),
                 child: Text(
                   "Create new account",
                   style: TextStyle(
