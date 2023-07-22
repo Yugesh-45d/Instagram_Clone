@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:instagram/practice.dart';
+import 'package:instagram/practice.dart';
 import 'package:instagram/screens/splash/splash_screen.dart';
 
 void main() {

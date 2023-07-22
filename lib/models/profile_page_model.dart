@@ -240,30 +240,30 @@ class Profile_Page_Model extends StatelessWidget {
           ),
         ),
         Personal_Story_Widget(),
-        Padding(
-          padding: const EdgeInsets.only(
-            top: 16,
-            left: 16,
-            right: 16,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Icon(
-                Icons.grid_on_sharp,
-                size: 28,
-              ),
-              Icon(
-                Icons.account_box_outlined,
-                size: 32,
-                color: Colors.grey,
-              ),
-            ],
-          ),
-        ),
-        SizedBox(
-          height: 8,
-        ),
+        // Padding(
+        //   padding: const EdgeInsets.only(
+        //     top: 16,
+        //     left: 16,
+        //     right: 16,
+        //   ),
+        //   child: Row(
+        //     mainAxisAlignment: MainAxisAlignment.spaceAround,
+        //     children: [
+        //       Icon(
+        //         Icons.grid_on_sharp,
+        //         size: 28,
+        //       ),
+        //       Icon(
+        //         Icons.account_box_outlined,
+        //         size: 32,
+        //         color: Colors.grey,
+        //       ),
+        //     ],
+        //   ),
+        // ),
+        // SizedBox(
+        //   height: 8,
+        // ),
       ],
     );
   }

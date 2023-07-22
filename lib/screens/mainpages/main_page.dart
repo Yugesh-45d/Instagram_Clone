@@ -20,6 +20,7 @@ class _MainPageState extends State<MainPage> {
   bool reels = false;
   bool avatar = false;
   int selected_index = 0;
+
   List<Widget> pages = [
     Insta_HomePage(),
     SearchPage(),
